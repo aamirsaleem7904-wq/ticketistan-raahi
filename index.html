@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ticketistan · Raahi v2 — UI Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0D2B4E;--teal:#0F6E56;--tm:#1D9E75;--t50:#E1F5EE;--t100:#9FE1CB;--t200:#5DCAA5;
+  --pur:#534AB7;--p50:#EEEDFE;--p100:#CECBF6;--a50:#FAEEDA;--amb:#854F0B;
+  --b50:#E3F2FD;--b600:#185FA5;--gr50:#EAF3DE;--gr600:#3B6D11;
+  --bd:#E8E6E0;--bd2:#D4D1C8;--tx:#1C1A17;--tx2:#6B6860;--tx3:#A09D97;
+  --bg:#F3F1EB;--wh:#FFFFFF;--sf:#F9F8F5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--tx)}
+.page{padding:44px 20px 64px}
+.ph{text-align:center;margin-bottom:44px}
+.bp{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--t100);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;padding:5px 14px 5px 10px;border-radius:20px;margin-bottom:14px}
+.bpdot{width:7px;height:7px;border-radius:50%;background:var(--t200)}
+.pt{font-family:'Outfit',sans-serif;font-size:30px;font-weight:700;color:var(--navy);letter-spacing:-.5px;line-height:1.2}
+.ps{font-size:13px;color:var(--tx2);margin-top:7px;line-height:1.6}
+.vtag{display:inline-flex;align-items:center;background:var(--p50);color:var(--pur);font-size:10px;font-weight:700;padding:3px 9px;border-radius:8px;margin-left:8px;vertical-align:middle}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;max-width:1340px;margin:0 auto 44px}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.sw{display:flex;flex-direction:column;align-items:center;gap:8px}
+.sn{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--tx3);text-transform:uppercase}
+.sl{font-size:12px;font-weight:600;color:var(--tx2)}
+.phone{width:100%;max-width:312px;border:2px solid var(--navy);border-radius:34px;overflow:hidden;background:var(--wh);box-shadow:4px 4px 0 var(--navy);height:680px;display:flex;flex-direction:column}
+.sb{background:var(--navy);color:#B5D4F4;font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:600;padding:8px 19px 6px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.hdr{background:var(--navy);padding:7px 13px 13px;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lr{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.lt{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;color:var(--t100);letter-spacing:.1em}
+.sp{flex:1}
+.av{width:33px;height:33px;border-radius:50%;background:var(--teal);border:2px solid var(--tm);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.hn{font-size:12.5px;font-weight:600;color:#fff;line-height:1.2}
+.hu{font-family:'Noto Nastaliq Urdu','Traditional Arabic',serif;font-size:11px;color:var(--t100)}
+.hs{font-size:10px;color:var(--t200);display:flex;align-items:center;gap:4px;margin-top:1px}
+.od{width:5px;height:5px;border-radius:50%;background:var(--t200)}
+.chat{padding:11px;background:var(--wh);flex:1;overflow-y:auto;min-height:0}
+.bwr{display:flex;gap:7px;margin-bottom:8px;align-items:flex-start}
+.bwu{display:flex;justify-content:flex-end;margin-bottom:8px}
+.btr{background:var(--sf);border-radius:4px 11px 11px 11px;padding:8px 10px;max-width:90%;font-size:12px;line-height:1.55;color:var(--tx)}
+.btu{background:var(--navy);border-radius:11px 4px 11px 11px;padding:8px 11px;max-width:84%;font-family:'Noto Nastaliq Urdu','Traditional Arabic',serif;font-size:14px;line-height:1.7;color:#fff;direction:rtl;text-align:right}
+.btue{background:var(--navy);border-radius:11px 4px 11px 11px;padding:8px 11px;max-width:84%;font-size:12px;line-height:1.5;color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.chip{background:var(--wh);border:.5px solid var(--bd2);border-radius:18px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--tx2)}
+.chipa{background:var(--t50);border-color:var(--teal);color:#085041;font-weight:600}
+.ic{background:var(--navy);border-radius:10px;padding:9px 11px;margin-top:6px}
+.il{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--t200);text-transform:uppercase;margin-bottom:6px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.ii{background:rgba(255,255,255,.08);border-radius:6px;padding:5px 7px}
+.ik{color:#9FE1CB;font-size:9.5px;margin-bottom:1px}
+.iv{color:#fff;font-weight:600;font-size:10.5px}
+.fc{border:.5px solid var(--bd);border-radius:9px;padding:8px 10px;margin:4px 0;background:var(--wh)}
+.fcb{border-color:var(--teal)}
+.al{font-size:10.5px;color:var(--tx2);font-weight:500}
+.fr{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;margin:3px 0;font-family:'Outfit',sans-serif}
+.fll{flex:1;height:1px;background:var(--bd)}
+.fllg{flex:1;height:1px;background:var(--teal)}
+.fd{font-size:9.5px;color:var(--tx2);font-weight:400}
+.fp{font-size:13px;font-weight:700;color:var(--navy);font-family:'Outfit',sans-serif}
+.b{font-size:9px;padding:2px 7px;border-radius:7px;font-weight:600;display:inline-block}
+.bg2{background:var(--t50);color:#085041}
+.ba{background:var(--a50);color:var(--amb)}
+.bn{background:var(--b50);color:var(--b600)}
+.bgr{background:var(--gr50);color:var(--gr600)}
+.bdk{background:var(--navy);color:#fff;border:none;border-radius:7px;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit}
+.btl{background:var(--teal);color:#fff;border:none;border-radius:7px;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit}
+.bfull{width:100%;padding:11px;border-radius:10px;border:none;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:7px}
+.btlf{background:var(--teal);color:#fff}
+.bdkf{background:var(--navy);color:#fff}
+.tip{background:var(--a50);border-radius:8px;padding:7px 9px;margin-top:6px;font-size:11px;color:#633806;line-height:1.45}
+.tc{border:.5px solid var(--bd);border-radius:9px;padding:7px 9px;margin:4px 0;display:flex;align-items:center;gap:7px;background:var(--wh)}
+.tcon{border-color:var(--teal);background:var(--t50)}
+.tci{width:27px;height:27px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.it{background:var(--t50)}.in2{background:var(--b50)}.ia{background:var(--a50)}
+.tcb{flex:1;min-width:0}
+.tct{font-size:11.5px;font-weight:600;color:var(--tx);margin-bottom:1px}
+.tcs{font-size:10px;color:var(--tx2);line-height:1.4}
+.tcp{font-size:10.5px;font-weight:600;color:var(--teal);margin-top:2px}
+.tog{width:32px;height:18px;border-radius:9px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;padding:2px}
+.ton{background:var(--teal);justify-content:flex-end}
+.toff{background:var(--bd2);justify-content:flex-start}
+.knob{width:14px;height:14px;border-radius:50%;background:#fff}
+.lck{width:17px;height:17px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pts{background:var(--p50);border-radius:8px;padding:7px 9px;margin-top:6px;display:flex;align-items:center;gap:7px}
+.ptsic{width:25px;height:25px;border-radius:50%;background:var(--pur);display:flex;align-items:center;justify-content:center;color:var(--p100);font-size:9px;font-weight:700;flex-shrink:0;font-family:'Outfit',sans-serif}
+.pbar{height:4px;background:var(--bd);border-radius:2px;margin:3px 0}
+.pf{height:100%;border-radius:2px;background:var(--pur)}
+.hcard{border:.5px solid var(--bd);border-radius:9px;overflow:hidden;margin:4px 0;background:var(--wh)}
+.hcb{padding:8px 10px}
+.stars{color:#BA7517;font-size:10px}
+.bnplg{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:6px 0}
+.bo{border:.5px solid var(--bd);border-radius:8px;padding:7px 5px;text-align:center;background:var(--wh)}
+.bos{background:var(--navy);border-color:var(--navy)}
+.bmo{font-family:'Outfit',sans-serif;font-size:11.5px;font-weight:700;color:var(--tx)}
+.bmos{color:var(--t100)}
+.bamt{font-size:9.5px;color:var(--tx2);margin-top:1px}
+.bamts{color:#fff}
+.po{border:.5px solid var(--bd);border-radius:9px;padding:8px 10px;margin:4px 0;background:var(--wh)}
+.pos{border-color:var(--teal);background:var(--t50)}
+.pic{width:27px;height:27px;border-radius:6px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cb{background:var(--sf);border-radius:9px;padding:8px 10px;margin-bottom:7px}
+.cr{display:flex;justify-content:space-between;align-items:center;padding:2px 0;font-size:11.5px}
+.cl{color:var(--tx2)}
+.ct{display:flex;justify-content:space-between;align-items:center;padding:6px 0 2px;font-size:12.5px;font-weight:700;border-top:.5px solid var(--bd2);margin-top:4px}
+.mt4{margin-top:4px}.mt6{margin-top:6px}
+.sm{font-size:11px}.mu{color:var(--tx2)}.str{font-weight:600}
+.rb{display:flex;align-items:center;gap:5px}
+.rsb{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.ibar{display:flex;gap:7px;padding:8px 11px;border-top:.5px solid var(--bd);align-items:center;background:var(--wh);flex-shrink:0}
+.iin{flex:1;background:var(--sf);border:.5px solid var(--bd);border-radius:17px;padding:7px 11px;font-size:11px;color:var(--tx3);outline:none;font-family:inherit}
+.isnd{width:30px;height:30px;border-radius:50%;background:var(--navy);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.leg{max-width:1340px;margin:0 auto;background:var(--wh);border:1px solid var(--bd);border-radius:18px;padding:22px 26px}
+.lgt{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:13px;letter-spacing:.03em}
+.lgg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:9px}
+.li{display:flex;align-items:flex-start;gap:7px}
+.ld{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.lt2{font-size:11.5px;color:var(--tx2);line-height:1.45}
+.lk{font-weight:600;color:var(--tx)}
+
+/* shared header svg shorthand */
+svg.plane path{fill:#9FE1CB}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="ph">
+  <div class="bp"><span class="bpdot"></span>RAAHI v2 · TICKETISTAN</div>
+  <div class="pt">AI Travel Concierge <span class="vtag">v2</span></div>
+  <div class="ps">8-screen mobile journey · Urdu-bilingual · Conversational-first · Embedded fintech + BNPL</div>
+</div>
+
+<div class="grid">
+
+<!-- S1 WELCOME -->
+<div class="sw">
+  <div class="sn">01</div><div class="sl">Welcome · Home</div>
+  <div class="phone">
+    <div class="sb"><span>9:41</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr">
+      <div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div>
+      <div class="sp"></div>
+      <div class="av">R</div>
+      <div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Safar ka intezaar hai</div></div>
+    </div>
+    <div class="chat">
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          <div class="str" style="margin-bottom:3px">Assalam o Alaikum!</div>
+          Main <strong>Raahi</strong> hoon — Ticketistan ka AI safar companion. Flights, hotels, packages, Umrah — <em>bas batao!</em>
+          <div style="margin-top:5px;font-family:'Noto Nastaliq Urdu','Traditional Arabic',serif;direction:rtl;font-size:13px;line-height:1.7;color:var(--tx2)">آپ کا ذاتی سفر مددگار — ہمیشہ حاضر</div>
+          <div class="chips"><span class="chip chipa">Flights</span><span class="chip">Hotels</span><span class="chip">Packages</span><span class="chip">Umrah</span><span class="chip">My trips</span></div>
+        </div>
+      </div>
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          <div style="background:var(--navy);border-radius:8px;padding:8px 10px">
+            <div class="rb" style="margin-bottom:3px">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1L3 3.2v3c0 2 1.5 3 2.5 3.5 1-.5 2.5-1.5 2.5-3.5v-3L5.5 1z" fill="#9FE1CB"/></svg>
+              <span style="color:#9FE1CB;font-size:11px;font-weight:600">Safar Pro · Active</span>
+              <span class="b bg2" style="margin-left:auto">Member</span>
+            </div>
+            <div style="color:var(--t200);font-size:10px">Cancel Anytime &amp; Price Freeze included on all bookings</div>
+          </div>
+          <div class="pts mt6">
+            <div class="ptsic">SP</div>
+            <div style="flex:1"><div style="font-size:11px;font-weight:600;color:#3C3489">Rahgeer tier · 2,420 pts</div><div class="pbar mt4"><div class="pf" style="width:62%"></div></div><div style="font-size:10px;color:var(--pur)">580 pts to Sayyah ✈</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Apna safar batayein...  اپنا سفر بتائیں"/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S2 CONVERSATIONAL SEARCH -->
+<div class="sw">
+  <div class="sn">02</div><div class="sl">Conversational search</div>
+  <div class="phone">
+    <div class="sb"><span>9:43</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Online</div></div></div>
+    <div class="chat">
+      <div class="bwu"><div class="btu">کراچی سے لاہور، کل کے لیے ایک ٹکٹ چاہیے</div></div>
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          <span style="color:var(--teal);font-weight:600">Got it!</span> Parsing your request...
+          <div class="ic">
+            <div class="il">Raahi understood</div>
+            <div class="ig">
+              <div class="ii"><div class="ik">From</div><div class="iv">Karachi</div></div>
+              <div class="ii"><div class="ik">To</div><div class="iv">Lahore</div></div>
+              <div class="ii"><div class="ik">Date</div><div class="iv">Tomorrow</div></div>
+              <div class="ii"><div class="ik">Passengers</div><div class="iv">1 adult</div></div>
+              <div class="ii"><div class="ik">Class</div><div class="iv">Economy</div></div>
+              <div class="ii"><div class="ik">Payment</div><div class="iv">Safar Qist</div></div>
+            </div>
+          </div>
+          <div style="margin-top:6px;font-size:10.5px;color:var(--tx2)">Also checking Price Freeze value on this route.</div>
+        </div>
+      </div>
+      <div class="bwr" style="margin-top:2px">
+        <div class="av">R</div>
+        <div class="btr"><span style="color:var(--teal);font-weight:600;font-size:11px">✓ 4 flights found · 0.3s</span><br/><span style="font-size:10.5px;color:var(--tx2)">Cheapest: PKR 8,500 · Best value: PKR 9,200</span></div>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Edit search or say 'show results'..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S3 FLIGHT RESULTS -->
+<div class="sw">
+  <div class="sn">03</div><div class="sl">Flight results</div>
+  <div class="phone">
+    <div class="sb"><span>9:44</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Online</div></div></div>
+    <div class="chat">
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          KHI → LHE ke liye meri top picks:
+          <div class="fc mt6"><div class="rsb" style="margin-bottom:3px"><span class="al">PIA · PK-303</span><span class="b ba">Economy</span></div><div class="fr"><span>06:00</span><div class="fll"></div><span class="fd">1h 15m</span><div class="fll"></div><span>07:15</span></div><div class="rsb" style="margin-top:4px"><span class="fp">PKR 8,500</span><button class="bdk">Select</button></div></div>
+          <div class="fc fcb"><div class="rsb" style="margin-bottom:3px"><span class="al">PIA · PA-411</span><span class="b bg2">Best value</span></div><div class="fr"><span>09:30</span><div class="fllg"></div><span class="fd">1h 15m</span><div class="fllg"></div><span>10:45</span></div><div class="rsb" style="margin-top:4px"><span class="fp">PKR 9,200</span><button class="btl">Select</button></div></div>
+          <div class="fc"><div class="rsb" style="margin-bottom:3px"><span class="al">PIA · PK-445</span><span class="b bn">Business</span></div><div class="fr"><span>14:15</span><div class="fll"></div><span class="fd">1h 15m</span><div class="fll"></div><span>15:30</span></div><div class="rsb" style="margin-top:4px"><span class="fp">PKR 26,400</span><button class="bdk">Select</button></div></div>
+          <div class="tip">Raahi tip: Seats limited! Price Freeze lagao — PKR 250 mein aaj ka rate 7 din lock karo.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="PA-411 select karo..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S4 FINTECH -->
+<div class="sw">
+  <div class="sn">04</div><div class="sl">Fintech layer</div>
+  <div class="phone">
+    <div class="sb"><span>9:46</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Online</div></div></div>
+    <div class="chat">
+      <div class="bwu"><div class="btue">PA-411 book karo — Price Freeze bhi lagao</div></div>
+      <div class="bwr"><div class="av">R</div><div class="btr"><span style="color:var(--teal);font-weight:600">Price Freeze locked!</span> PKR 9,200 secured · 7 days. Confirm karne se pehle:</div></div>
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          <div class="tc tcon">
+            <div class="tci it"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L3 3.6v3.5c0 2.3 1.7 3.5 3.5 4 1.8-.5 3.5-1.7 3.5-4V3.6L6.5 1z" fill="#0F6E56"/></svg></div>
+            <div class="tcb"><div class="tct">Cancel Anytime <span class="b bg2" style="margin-left:3px">ON</span></div><div class="tcs">Kisi bhi wajah cancel — 100% wapas. No questions.</div><div class="tcp">+ PKR 1,058 (11%)</div></div>
+            <div class="tog ton"><div class="knob"></div></div>
+          </div>
+          <div class="tc tcon">
+            <div class="tci in2"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#185FA5" stroke-width="1.1"/><path d="M4 6.5h5M6.5 4v5" stroke="#185FA5" stroke-width="1" stroke-linecap="round"/></svg></div>
+            <div class="tcb"><div class="tct">Price Freeze <span class="b bg2" style="margin-left:3px">Locked ✓</span></div><div class="tcs">PKR 9,200 secured — fare rises, yours stays fixed.</div><div class="tcp">PKR 250 paid · 7 days left</div></div>
+            <div class="lck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2L6.5 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="tc">
+            <div class="tci ia"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5l1.4 3L11 5l-2.3 2.2.5 3.2L6.5 9 4 10.4l.5-3.2L2 5l3.1-.5L6.5 1.5z" fill="#BA7517"/></svg></div>
+            <div class="tcb"><div class="tct">Disruption Cover</div><div class="tcs">PIA delay 3hrs+? Auto wallet payout. PIA on-time 55%!</div><div class="tcp">+ PKR 399</div></div>
+            <div class="tog toff"><div class="knob"></div></div>
+          </div>
+          <div class="pts"><div class="ptsic">SP</div><div style="flex:1"><div style="font-size:11px;font-weight:600;color:#3C3489">920 Safar Points earned</div><div class="pbar mt4"><div class="pf" style="width:62%"></div></div><div style="font-size:10px;color:var(--pur)">Rahgeer · 580 pts to Sayyah</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Disruption Cover add karo?"/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S5 HOTEL RESULTS -->
+<div class="sw">
+  <div class="sn">05</div><div class="sl">Hotel results</div>
+  <div class="phone">
+    <div class="sb"><span>9:48</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Online</div></div></div>
+    <div class="chat">
+      <div class="bwu"><div class="btu">لاہور میں ہوٹل بھی ملا دو</div></div>
+      <div class="bwr">
+        <div class="av">R</div>
+        <div class="btr" style="width:100%">
+          Lahore ke top hotels:
+          <div class="hcard mt6">
+            <div style="width:100%;height:88px;background:linear-gradient(135deg,#1a3a5c 0%,#0D2B4E 40%,#0F4D3A 100%);display:flex;align-items:flex-end;padding:8px 10px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0px,rgba(255,255,255,.02) 1px,transparent 1px,transparent 12px)"></div>
+              <div style="position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L5 4l3 4 2-2.5L14 10H2z" fill="rgba(255,255,255,.6)"/><circle cx="9" cy="4" r="1.5" fill="rgba(255,255,255,.6)"/></svg></div>
+              <div><div style="font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase">Pearl Continental · Lahore</div><div style="font-size:11px;font-weight:600;color:#fff;margin-top:1px">Luxury · Sea-facing rooms available</div></div>
+            </div>
+            <div class="hcb"><div class="rsb" style="margin-bottom:3px"><div><div style="font-size:12.5px;font-weight:600">Pearl Continental</div><div class="stars">★★★★★</div></div><span class="b bg2">Editor's pick</span></div><div class="sm mu">PKR 24,000/night · Free cancel</div><div class="rsb mt6"><div class="rb" style="gap:4px"><span class="b bn">Breakfast</span><span class="b bgr">Pool</span></div><button class="bdk">View</button></div></div>
+          </div>
+          <div class="hcard">
+            <div style="width:100%;height:88px;background:linear-gradient(135deg,#0F4D3A 0%,#0F6E56 50%,#1a5c4a 100%);display:flex;align-items:flex-end;padding:8px 10px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 1px,transparent 1px,transparent 14px)"></div>
+              <div style="position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5" width="8" height="6" rx=".5" stroke="rgba(255,255,255,.7)" stroke-width="1"/><path d="M4 5V3h4v2" stroke="rgba(255,255,255,.7)" stroke-width="1"/></svg></div>
+              <div><div style="font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase">Avari Hotel · City Centre, Lahore</div><div style="font-size:11px;font-weight:600;color:#fff;margin-top:1px">4-star · Breakfast included</div></div>
+            </div>
+            <div class="hcb"><div class="rsb" style="margin-bottom:3px"><div><div style="font-size:12.5px;font-weight:600">Avari · City Centre</div><div class="stars">★★★★</div></div><span class="b ba">Best price</span></div><div class="sm mu">PKR 15,500/night · Breakfast incl.</div><div class="rsb mt6"><div class="rb" style="gap:4px"><span class="b bn">Breakfast</span><span class="b bgr">Wi-Fi</span></div><button class="btl">View</button></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Avari dekhao ya Pearl book karo..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S6 HOTEL DETAIL -->
+<div class="sw">
+  <div class="sn">06</div><div class="sl">Hotel detail</div>
+  <div class="phone">
+    <div class="sb"><span>9:49</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Online</div></div></div>
+    <div style="padding:11px;background:var(--wh);flex:1;overflow-y:auto;min-height:0">
+      <div style="width:100%;height:112px;background:linear-gradient(150deg,#0D2B4E 0%,#0F4D6E 45%,#0F6E56 100%);border-radius:9px;display:flex;align-items:flex-end;padding:10px 12px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(60deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 1px,transparent 16px)"></div>
+        <div style="position:absolute;top:10px;right:12px"><div style="font-size:9px;color:rgba(255,255,255,.55);text-align:right;letter-spacing:.06em">VERIFIED STAY</div><div style="width:40px;height:1px;background:rgba(255,255,255,.25);margin-top:3px;margin-left:auto"></div></div>
+        <div><div style="font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase">Property preview</div><div style="font-size:12px;font-weight:600;color:#fff;margin-top:1px">Avari Hotel Lahore</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:5px">
+        <div style="height:40px;border-radius:6px;background:linear-gradient(135deg,#1a3550 0%,#2a4a6a 100%);display:flex;align-items:center;justify-content:center"><span style="font-size:9px;color:rgba(255,255,255,.55);font-weight:500">Lobby</span></div>
+        <div style="height:40px;border-radius:6px;background:linear-gradient(135deg,#0F3D2E 0%,#1a5c45 100%);display:flex;align-items:center;justify-content:center"><span style="font-size:9px;color:rgba(255,255,255,.55);font-weight:500">Room</span></div>
+        <div style="height:40px;border-radius:6px;background:linear-gradient(135deg,#2a1a40 0%,#3C3489 100%);display:flex;align-items:center;justify-content:center"><span style="font-size:9px;color:rgba(255,255,255,.55);font-weight:500">Pool</span></div>
+      </div>
+      <div class="rsb mt6"><div><div style="font-size:14px;font-weight:700">Avari Hotel Lahore</div><div class="stars" style="font-size:10px">★★★★ <span class="mu sm">· 4.5 · City Centre</span></div></div><div style="text-align:right"><div style="font-size:14px;font-weight:700;font-family:'Outfit',sans-serif">PKR 15,500</div><div class="mu sm">per night</div></div></div>
+      <div style="background:var(--t50);border:.5px solid var(--teal);border-radius:8px;padding:7px 9px;margin-top:7px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:3px">Raahi note</div>
+        <div style="font-size:11px;color:var(--tx);line-height:1.45">Reliable central option. Breakfast included, flexible cancel. Best for business + family stays.</div>
+      </div>
+      <div style="margin-top:7px;font-size:12px;font-weight:600;margin-bottom:5px">Room options</div>
+      <div style="border:.5px solid var(--teal);border-radius:8px;padding:8px 9px;background:var(--t50);margin-bottom:4px"><div class="rsb"><div><div style="font-size:12px;font-weight:600">Superior King</div><div class="sm mu">Breakfast · Free cancel · 2 guests</div></div><div style="text-align:right"><div style="font-size:12.5px;font-weight:700;font-family:'Outfit',sans-serif">PKR 15,500</div><button class="btl" style="margin-top:4px;padding:4px 9px;font-size:10.5px">Select</button></div></div></div>
+      <div style="border:.5px solid var(--bd);border-radius:8px;padding:8px 9px"><div class="rsb"><div><div style="font-size:12px;font-weight:600">Deluxe Suite</div><div class="sm mu">City view · All-inclusive</div></div><div style="text-align:right"><div style="font-size:12.5px;font-weight:700;font-family:'Outfit',sans-serif">PKR 22,000</div><button class="bdk" style="margin-top:4px;padding:4px 9px;font-size:10.5px">View</button></div></div></div>
+      <div style="background:var(--sf);border-radius:7px;padding:6px 9px;margin-top:6px;font-size:10.5px;color:var(--tx2);line-height:1.5">Free cancel · Pay at hotel · Instant refund to Safar Wallet</div>
+      <button class="bfull btlf" style="padding:10px;font-size:12px">Continue to checkout</button>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Superior room book karo..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S7 CHECKOUT + BNPL -->
+<div class="sw">
+  <div class="sn">07</div><div class="sl">Checkout · BNPL</div>
+  <div class="phone">
+    <div class="sb"><span>9:51</span><span>●●● LTE &nbsp;100%</span></div>
+    <div class="hdr"><div class="lr"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="plane"><path d="M12 7.5L8.5 3.5V5.5L2 7v2l6.5-1.5v2.5l-1.5 1 .5 2L10 11.5l3-2L12 7.5z"/></svg><span class="lt">TICKETISTAN</span></div><div class="sp"></div><div class="av">R</div><div><div class="hn">Raahi <span class="hu">راہی</span></div><div class="hs"><span class="od"></span>Sab set hai!</div></div></div>
+    <div style="padding:10px 11px;background:var(--wh);flex:1;overflow-y:auto;min-height:0">
+      <div style="background:var(--t50);border:.5px solid var(--teal);border-radius:8px;padding:7px 9px;margin-bottom:7px;font-size:11px;line-height:1.45"><span style="font-weight:600;color:var(--teal)">Bilkul tayyar!</span> ✓ Cancel Anytime · ✓ Price Freeze locked · ✓ 2,600 pts earning</div>
+      <div class="cb">
+        <div style="font-size:11.5px;font-weight:600;margin-bottom:5px">Order summary</div>
+        <div class="cr"><span class="cl">PA-411 KHI→LHE · 09:30</span><span class="str">PKR 9,200</span></div>
+        <div class="cr"><span class="cl">Price Freeze (paid)</span><span class="str">PKR 250</span></div>
+        <div class="cr"><span class="cl">Cancel Anytime (CFAR)</span><span class="str">PKR 1,058</span></div>
+        <div class="cr"><span class="cl">Avari Hotel · 1 night</span><span class="str">PKR 15,500</span></div>
+        <div class="ct"><span>Total</span><span style="color:var(--navy);font-family:'Outfit',sans-serif">PKR 26,008</span></div>
+      </div>
+      <div style="font-size:11.5px;font-weight:600;margin-bottom:5px">Bhugtan <span class="mu sm" style="font-weight:400">· Payment</span></div>
+      <div class="po pos">
+        <div class="rb" style="margin-bottom:5px">
+          <div class="pic"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2.5" width="10" height="7" rx="1.5" stroke="#9FE1CB" stroke-width="1"/><path d="M3.5 6h5" stroke="#9FE1CB" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div><div style="font-size:11px;font-weight:600;color:#085041">Safar Qist — Meezan Murabaha <span class="b bg2" style="margin-left:2px">Selected</span></div><div style="font-size:9.5px;color:var(--teal)">Sharia-compliant · Zero interest</div></div>
+        </div>
+        <div class="bnplg">
+          <div class="bo"><div class="bmo">3 mo</div><div class="bamt">PKR 8,669</div></div>
+          <div class="bo bos"><div class="bmo bmos">6 mo</div><div class="bamt bamts">PKR 4,335</div></div>
+          <div class="bo"><div class="bmo">12 mo</div><div class="bamt">PKR 2,167</div></div>
+        </div>
+      </div>
+      <div class="po"><div class="rsb"><div><div class="sm str">Safar Wallet</div><div style="font-size:10px;color:var(--tx2)">Balance PKR 3,200 · Apply instantly</div></div><span class="b bn">Available</span></div></div>
+      <div class="po"><div class="sm str">JazzCash Wallet</div><div style="font-size:10px;color:var(--tx2)">Full PKR 26,008 · Instant</div></div>
+      <div class="pts" style="margin-top:6px"><div class="ptsic">SP</div><div style="flex:1"><div style="font-size:11px;font-weight:600;color:#3C3489">2,600 pts — Sayyah unlocked!</div><div class="pbar mt4"><div class="pf" style="width:100%"></div></div><div style="font-size:10px;color:var(--pur)">Next: Ayyar — 1,500 pts ✈</div></div></div>
+      <button class="bfull btlf" style="padding:11px;font-size:12.5px">Confirm &amp; Pay · PKR 4,335/month</button>
+      <div style="text-align:center;margin-top:5px;font-size:10px;color:var(--tx3)">100% refund available anytime · Cancel Anytime active ✓</div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Koi sawal? Raahi yahan hai..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+<!-- S8 CONFIRMATION -->
+<div class="sw">
+  <div class="sn">08</div><div class="sl">Confirmation</div>
+  <div class="phone">
+    <div class="sb"><span>9:53</span><span>●●● LTE &nbsp;100%</span></div>
+    <div style="background:var(--teal);padding:10px 13px 14px;display:flex;align-items:center;gap:9px;flex-shrink:0">
+      <div style="width:31px;height:31px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div style="color:#fff;font-size:14px;font-weight:700">Booking confirmed!</div><div style="color:var(--t100);font-size:10.5px">Details sent to WhatsApp &amp; email</div></div>
+    </div>
+    <div style="padding:10px 11px;background:var(--wh);flex:1;overflow-y:auto;min-height:0">
+      <div class="cb" style="margin-bottom:7px">
+        <div style="font-size:11.5px;font-weight:600;margin-bottom:5px">Your trip · TI-PK-482193</div>
+        <div class="cr"><span class="cl">Route</span><span class="str">KHI → LHE · PA-411</span></div>
+        <div class="cr"><span class="cl">Date</span><span class="str">Tomorrow · 09:30</span></div>
+        <div class="cr"><span class="cl">Hotel</span><span class="str">Avari · 1 night</span></div>
+        <div class="cr"><span class="cl">Protection</span><span style="color:var(--teal);font-weight:600">CFAR + PF ✓</span></div>
+        <div class="cr"><span class="cl">Payment</span><span class="str">Safar Qist · 6 months</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:7px">
+        <div style="background:var(--navy);border-radius:9px;padding:9px 10px"><div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--t100);text-transform:uppercase">Next payment</div><div style="font-size:16px;font-weight:700;color:#fff;font-family:'Outfit',sans-serif;margin-top:2px">PKR 4,335</div><div style="font-size:10px;color:#9FE1CB;margin-top:1px">Due next month</div></div>
+        <div style="background:var(--p50);border-radius:9px;padding:9px 10px"><div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--pur);text-transform:uppercase">Safar Points</div><div style="font-size:16px;font-weight:700;color:var(--navy);font-family:'Outfit',sans-serif;margin-top:2px">+2,600</div><div style="font-size:10px;color:var(--pur);margin-top:1px">Sayyah tier unlocked!</div></div>
+      </div>
+      <div style="font-size:11.5px;font-weight:600;margin-bottom:5px">Kya karein aage?</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:7px">
+        <div style="background:var(--sf);border-radius:7px;padding:7px 9px;font-size:10.5px;color:var(--tx2);font-weight:500">Open on WhatsApp</div>
+        <div style="background:var(--sf);border-radius:7px;padding:7px 9px;font-size:10.5px;color:var(--tx2);font-weight:500">Download ticket</div>
+        <div style="background:var(--sf);border-radius:7px;padding:7px 9px;font-size:10.5px;color:var(--tx2);font-weight:500">View Qist plan</div>
+        <div style="background:var(--sf);border-radius:7px;padding:7px 9px;font-size:10.5px;color:var(--tx2);font-weight:500">Get AI itinerary</div>
+      </div>
+      <div style="background:var(--t50);border:.5px solid var(--teal);border-radius:8px;padding:8px 10px">
+        <div style="font-size:11.5px;font-weight:600;color:var(--teal);margin-bottom:2px">Raahi abhi bhi yahan hai</div>
+        <div style="font-size:10.5px;color:var(--tx2);line-height:1.45">Weather alerts, packing tips, restaurant suggestions, live tracking — bas poochho!</div>
+        <button class="bfull bdkf" style="padding:9px;font-size:11.5px;margin-top:6px">Continue on WhatsApp</button>
+      </div>
+    </div>
+    <div class="ibar"><input class="iin" placeholder="Raahi se kuch aur poochho..."/><button class="isnd"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6.5 2l3.5 3.5L6.5 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</div>
+
+</div>
+
+<!-- LEGEND -->
+<div class="leg">
+  <div class="lgt">Raahi v2 · Value proposition map</div>
+  <div class="lgg">
+    <div class="li"><div class="ld" style="background:var(--teal)"></div><div class="lt2"><span class="lk">Raahi AI concierge</span> — Named, bilingual, with real opinions. Professional + warm. Not a search box.</div></div>
+    <div class="li"><div class="ld" style="background:var(--navy)"></div><div class="lt2"><span class="lk">Urdu-native input</span> — RTL bubbles, Noto Nastaliq rendering, bilingual AI responses.</div></div>
+    <div class="li"><div class="ld" style="background:var(--tm)"></div><div class="lt2"><span class="lk">Raahi understood card</span> — AI parses natural language to structured trip params. No forms.</div></div>
+    <div class="li"><div class="ld" style="background:var(--teal)"></div><div class="lt2"><span class="lk">Cancel Anytime (CFAR)</span> — 100% refund, any reason. Toggle ON for Safar Pro. Correct spec.</div></div>
+    <div class="li"><div class="ld" style="background:var(--b600)"></div><div class="lt2"><span class="lk">Price Freeze</span> — Surfaced proactively. Shows as "already locked" at the fintech screen.</div></div>
+    <div class="li"><div class="ld" style="background:#BA7517"></div><div class="lt2"><span class="lk">Disruption Cover</span> — Raahi cites PIA's actual 55% on-time rate. Toggle UI, instant wallet payout.</div></div>
+    <div class="li"><div class="ld" style="background:var(--pur)"></div><div class="lt2"><span class="lk">Safar Points loyalty</span> — Visible progress bar screens 1–4. Tier unlock at confirmation.</div></div>
+    <div class="li"><div class="ld" style="background:var(--teal)"></div><div class="lt2"><span class="lk">Safar Qist BNPL</span> — 3/6/12 month selector, 6 months pre-selected. Meezan Murabaha. Zero interest.</div></div>
+    <div class="li"><div class="ld" style="background:var(--b600)"></div><div class="lt2"><span class="lk">Safar Wallet</span> — Third payment option. Refunds flow here automatically. Balance shown.</div></div>
+    <div class="li"><div class="ld" style="background:var(--navy)"></div><div class="lt2"><span class="lk">Hotel detail + rooms</span> — Unsplash photos, thumbnail gallery, room selection, Raahi note.</div></div>
+    <div class="li"><div class="ld" style="background:var(--teal)"></div><div class="lt2"><span class="lk">Safar Pro membership</span> — Visible from screen 1. Auto-applies fintech. Tier status throughout.</div></div>
+    <div class="li"><div class="ld" style="background:#0F6E56"></div><div class="lt2"><span class="lk">Confirmation</span> — Next Qist payment, points tier unlock, 4 next actions, Raahi stays on WhatsApp.</div></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
